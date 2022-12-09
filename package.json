@@ -1,0 +1,41 @@
+{
+  "name": "wip",
+  "version": "0.0.0-development",
+  "private": true,
+  "description": "DO NOT MERGE – as a service.",
+  "main": "index.js",
+  "scripts": {
+    "start": "probot run ./index.js",
+    "test": "tap --100 --coverage test/**/*-test.js",
+    "posttest": "npm run lint",
+    "semantic-release": "semantic-release",
+    "lint": "prettier --check '{lib,test}/**/*.{js,json,ts}' index.js *.md package.json",
+    "lint:fix": "prettier --write '{lib,test}/**/*.{js,json,ts}' index.js *.md package.json"
+  },
+  "repository": "https://github.com/wip/app",
+  "keywords": [
+    "probot"
+  ],
+  "author": "Gregor Martynus (https://github.com/gr2m)",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "gemoji": "^8.0.0",
+    "pluralize": "^8.0.0",
+    "probot": "^12.2.8"
+  },
+  "devDependencies": {
+    "@sinonjs/fake-timers": "^9.1.1",
+    "@vercel/node": "^2.8.0",
+    "lodash.clonedeep": "^4.5.0",
+    "nock": "^13.2.9",
+    "prettier": "^2.8.1",
+    "proxyquire": "^2.0.1",
+    "semantic-release": "^19.0.5",
+    "simple-mock": "^0.8.0",
+    "smee-client": "^1.2.3",
+    "tap": "^16.3.2"
+  },
+  "jest": {
+    "testURL": "http://localhost/"
+  }
+}

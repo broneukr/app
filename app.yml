@@ -1,0 +1,49 @@
+# This is a GitHub App Manifest. These settings will be used by default when
+# initially configuring your GitHub App.
+#
+# NOTE: changing this file will not update your GitHub App settings.
+# You must visit github.com/settings/apps/your-app-name to edit them.
+#
+# Read more about configuring your GitHub App:
+# https://probot.github.io/docs/development/#configuring-a-github-app
+#
+# Read more about GitHub App Manifests:
+# https://developer.github.com/apps/building-github-apps/creating-github-apps-from-a-manifest/
+#
+# Find a full example with all configuration options at
+# https://github.com/probot/create-probot-app/tree/master/templates/basic-js
+
+# The list of events the WIP GitHub App subscribes to.
+default_events:
+  - pull_request
+
+# The set of permissions needed by the  WIP GitHub App.
+default_permissions:
+  # WIP is creating check runs, hence write permission for check runs is required
+  # https://developer.github.com/v3/apps/permissions/#permission-on-checks
+  checks: write
+
+  # This is read by default: search repositories, list collaborators, and access repository metadata.
+  # https://developer.github.com/v3/apps/permissions/#metadata-permissions
+  metadata: read
+
+  # WIP needs to check commit messages for the "pro" plan
+  # https://developer.github.com/v3/apps/permissions/#permission-on-pull-requests
+  pull_requests: read
+
+  # WIP is using the `.github/wip.yml` file for configuration when signed up for the "pro" plan
+  # https://developer.github.com/v3/apps/permissions/#permission-on-single-file
+  single_file: read
+
+# WIP is using the `.github/wip.yml` file for configuration when signed up for the "pro" plan
+# https://developer.github.com/v3/apps/permissions/#permission-on-single-file
+single_file_name: .github/wip.yml
+
+# The name of the GitHub App. Defaults to the name specified in package.json, but we like it uppercase :)
+name: WIP
+
+# Our homepage
+url: https://github.com/wip/app
+
+# A description of the GitHub App.
+description: DO NOT MERGE – as a service
